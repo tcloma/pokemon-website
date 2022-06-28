@@ -12,15 +12,21 @@ body{
     border-radius: 10px;
     background-color: #fff;
     transition: transform 0.5s;
-    float: left;
 }
 
 .pokemon-card > img{
     height: auto;
-    width: 300px;
+    width: 420px;
 }
 
 .pokemon-card:hover{
     transform: scale(1.01);
-    border: 2px solid dodgerblue;
+    border: 5px solid dodgerblue;
+    cursor: pointer;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    gap: 1%;
 }
