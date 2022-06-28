@@ -1,4 +1,26 @@
-h1{
+body{
     font-family: sans-serif;
+}
+
+.header{
+    font-size: 5em;
     text-align: center;
+}
+
+.pokemon-card{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.5s;
+    float: left;
+}
+
+.pokemon-card > img{
+    height: auto;
+    width: 300px;
+}
+
+.pokemon-card:hover{
+    transform: scale(1.01);
+    border: 2px solid dodgerblue;
 }
