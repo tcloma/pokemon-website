@@ -1,6 +1,9 @@
 // const pokemon =["Bulbasaur", "Charmander" , "Squirtle"]
 // const pokemonIDs =["001", "004", "007"]
 const containerDiv = document.querySelector('#container')
+const newBtn = document.querySelector('#new-pokemon-btn')
+const rosterDiv = document.querySelector("#roster")
+
 const header = document.querySelector('h1.header')
 const pokemon = [
     {name: 'Bulbasaur', id: '001'},
@@ -14,6 +17,11 @@ const pokemon = [
 // set the HTML element values
 // append HTML element to the DOM
 
+newBtn.addEventListener('click', () => {
+    let num = prompt('ENTER POKEMON NUMBER')
+    console.log(num);
+})
+
 pokemon.map((element, index) =>{
     console.log(element)
     let imgUrl =`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${element.id}.png`
@@ -25,6 +33,18 @@ pokemon.map((element, index) =>{
     let img = document.createElement('img')
     img.src = imgUrl
     
-    div.append(img, pokeName)
+    let audioUrl =`https://play.pokemonshowdown.com/audio/cries/${element.name.toLowerCase()}.mp3`
+    let audio = document.createElement('audio')
+    let source = document.createElement('source')
+    source.setAttribute('src', audioUrl)
+    source.setAttribute('type', 'audio/mpeg')
+    audio.append(source)
+
+    div.addEventListener('click', () => {
+        audio.play();
+        console.log('audio', audioUrl)
+    })
+   
+    div.append(img, pokeName, audio)
     containerDiv.append(div)
 })
