@@ -10,6 +10,7 @@ const pokemon = [
     {name: 'Charmander', id: '004'},
     {name: 'Squirtle', id: '007'}
 ]
+const userRoster = []
 
 // DOM = Document Object Model
 // loop over every ID 
@@ -20,6 +21,14 @@ const pokemon = [
 newBtn.addEventListener('click', () => {
     let num = prompt('ENTER POKEMON NUMBER')
     console.log(num);
+    let imgUrl =`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${num}.png`
+    let img = document.createElement('img')
+    img.setAttribute('src', imgUrl)
+    img.setAttribute('class', 'roster-img')
+    let position = document.querySelector(`#pokemon-${userRoster.length+1}`)
+    position.append(img)
+    userRoster.push(num)
+
 })
 
 pokemon.map((element, index) =>{
