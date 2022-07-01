@@ -12,11 +12,41 @@ body{
     border-radius: 10px;
     background-color: #fff;
     transition: transform 0.5s;
+    text-align: center;
 }
 
 .pokemon-card > img{
     height: auto;
     width: 420px;
+}
+
+button{
+    padding: 20px 20px 20px 20px;
+    margin: 20px 10px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: bold;
+    border-style: none;
+}
+
+#new-pokemon-btn{
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+#remove-pokemon-btn{
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#rename-pokemon-btn{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+button:hover{
+    border-style:double;
 }
 
 .pokemon-card:hover{
@@ -40,9 +70,20 @@ div[id^="pokemon-"]{
     width:100px;
     height: 100px;
     border: 1px solid #ccc;
+    text-transform: capitalize;
+}
+
+div[id^="pokemon-"]:hover{
+    transform: scale(1.01);
+    border: 5px solid dodgerblue;
+    cursor: pointer;
 }
 
 .roster-img{
     height: 100px;
     width: 100px;
+}
+
+h3{
+    text-align: center;
 }
